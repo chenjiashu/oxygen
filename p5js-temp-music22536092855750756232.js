@@ -2,7 +2,7 @@ var sound, amplitude, cnv;
 var num=150;
 var tx=[],ty=[],r=[];
 var count=0;
-var ss=30;
+var ss=35;
 var mouseK=0;
 function preload(){
   sound = loadSound('data/1.mp3');

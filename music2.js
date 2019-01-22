@@ -2,6 +2,8 @@ var sound, amplitude, cnv;
 var num=150;
 var tx=[],ty=[],r=[];
 var ss=0;
+var count=0;
+var ss=100;
 function preload(){
   sound = loadSound('data/1.mp3');
 }
@@ -18,23 +20,30 @@ function setup() {
   for (var i=0;i<num;i++){
     tx[i]=random(displayWidth);
     ty[i]=random(displayHeight);
-    r[i]=random(displayWidth/20,displayWidth/10);
+    var rr=sqrt(displayWidth*displayHeight)/20;
+    r[i]=random(rr*1.5,2.5*rr);
   }
 }
 function draw() {
  /// if(song.isPlaying())
+ 
+ 
+ 
  if(ss==1)
   background(random(0,70));
  else background(0);
   noStroke();
+  
+  
   fill(255);
   var level = amplitude.getLevel();
-  var size = map(level, 0, 1, 0, 10);
+  var size = map(level, 0, 1, 0, 20);
   for(var i=0;i<num;i++){
-    randomSeed(frameCount);
+    count++;
+    randomSeed(count);
     fill(255,0,0,70);
-    ellipse(tx[i]+random(-size*10,size*10),ty[i]+random(-size*10,size*10),r[i]*size,r[i]*size);
-    tx[i]+=random(-size*10,size*10);ty[i]+=random(-size*10,size*10);
+    ellipse(tx[i]+random(-size*ss,size*ss),ty[i]+random(-size*ss,size*ss),r[i]*size,r[i]*size);
+    tx[i]+=random(-size*ss,size*ss);ty[i]+=random(-size*ss,size*ss);
   }
-  
+  //asdfasfsafsafsafsadfsad
 }

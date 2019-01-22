@@ -3,7 +3,7 @@ var num=150;
 var tx=[],ty=[],r=[];
 var ss=0;
 var count=0;
-var ss=100;
+var ss=130;
 function preload(){
   sound = loadSound('data/1.mp3');
 }
@@ -38,7 +38,7 @@ function draw() {
   
   fill(255);
   var level = amplitude.getLevel();
-  var size = map(level, 0, 1, 0, 12);
+  var size = map(level, 0, 1, 0, 14);
   for(var i=0;i<num;i++){
     count++;
     fill(255,0,0,70);
